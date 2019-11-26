@@ -1,0 +1,15 @@
+
+language: node_js
+node_js:
+  - '12'
+services:
+  - docker
+
+before_install:
+  - npm install -g parcel-bundler
+
+script:
+  - parcel ./index.js
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t cicdTest:latest .
+  - docker push cicdTest:latest
