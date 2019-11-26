@@ -11,5 +11,5 @@ before_install:
 script:
   - parcel build ./index.js
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker image build ./ -t dockerforjunyan/cicdTest
-  - docker push dockerforjunyan/cicdTest
+  - docker image build ./ -t dockerforjunyan/cicdtest:latest
+  - docker push dockerforjunyan/cicdtest:latest
