@@ -9,7 +9,7 @@ before_install:
   - npm install -g parcel-bundler
 
 script:
-  - parcel ./index.js
+  - parcel build ./index.js
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t cicdTest:latest .
   - docker push cicdTest:latest
