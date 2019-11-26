@@ -3,5 +3,5 @@ export function a() {
 }
 
 export function b() {
-    console.info('this is b');
+    console.info('this is b!');
 }
